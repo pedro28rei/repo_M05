@@ -1,4 +1,4 @@
-# Trabalho prático da UC Análise e Modelação de Software
+# Análise e Modelação de Software (Trabalho Prático)
 Projeto sobre
 
 # Realizado por:
