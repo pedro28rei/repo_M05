@@ -1,6 +1,12 @@
 window.OnPageLoad = function () {}
 window.onload = function () {
 	$("#suc").addClass('d-none');
+	CarregarDados();
+}
+
+function CarregarDados() {
+	$('#cped').val(1);
+	$('#descp').val("Vestibulum vulputate tortor ut felis fringilla dictum. Ut consequat ligula in nisl pharetra maximus. Ut mi arcu, pretium quis sapien ut, condimentum tincidunt sem. Duis eget bibendum lorem. Morbi vulputate sem sit amet tortor dictum laoreet. Sed sit amet egestas diam. Praesent varius aliquet ligula, in posuere nulla lobortis id. ");
 }
 
 // Esperar x milisegundos
@@ -12,8 +18,7 @@ function ClearError() {
 	$('#val').removeClass("is-invalid");
 	$('#datain').removeClass("is-invalid");
 	$('#datafim').removeClass("is-invalid");
-	$('#loc').removeClass("is-invalid");
-	$('#desc').removeClass("is-invalid");
+	$('#com').removeClass("is-invalid");
 }
 
 function ComparaData(d1, d2) {
@@ -37,12 +42,9 @@ function CriarClick() {
 	
     //Ler Dados
 	var valor = $('#val').val();
-	var tipoServico = $('#tiposerv').val();
 	var dataInicio = $('#datain').val();
 	var dataFim = $('#datafim').val();
-	var local = $('#loc').val();
-	var descricao = $('#desc').val();	
-	var imagem = $('#img').val();
+	var comentario = $('#com').val();	
 	
 	//Verificar Dados
     if (valor === null || valor.trim() === '' || valor <= 0) {
@@ -57,12 +59,8 @@ function CriarClick() {
 		$('#datafim').addClass("is-invalid");
 		err = 1;
     }
-    if (local === null || local.trim() === '') {
-		$('#loc').addClass("is-invalid");
-		err = 1;
-    }
-    if (descricao === null || descricao.trim() === '') {
-		$('#desc').addClass("is-invalid");
+	if (comentario === null || comentario.trim() === '') {
+		$('#com').addClass("is-invalid");
 		err = 1;
     }
 	
@@ -78,7 +76,7 @@ function CriarClick() {
 		return;
 	}
 	
-	//Função para Guardar Pedido
+	//Função para Guardar Proposta
 
 	$("#suc").removeClass('d-none');
 	sleep(2000).then(() => { window.location.href = "index.html"; });
