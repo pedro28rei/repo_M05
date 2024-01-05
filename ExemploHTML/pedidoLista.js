@@ -4,8 +4,7 @@ const tipoUtilizador = params.get('usr');
 var colunas;
 var dados;
 
-window.OnPageLoad = function () { }
-window.onload = function () {
+function AlteraTitulo() {
     if (tipoUtilizador == 1) {
         document.getElementById('titulo').innerHTML = "Histórico de Pedidos";
     }
@@ -15,9 +14,6 @@ window.onload = function () {
     else {
         document.getElementById('titulo').innerHTML = "Pedidos";
     }
-
-    CarregaDados();
-    CriarTabela();
 }
 
 function CarregaDados() {
@@ -37,13 +33,15 @@ function CarregaDados() {
 
 }
 
+function comparaHistorico(p1, p2) {
+    return p1.historico - p2.historico;
+}
+
 function CriarTabela() {
     var tabela = document.getElementById('tabela');
     var tabelaHead = tabela.createTHead().insertRow(0);
     tabela.createTBody().insertRow(0);
     var tabelaBody = tabela.getElementsByTagName('tbody')[0];
-
-
 
     colunas.forEach(tituloColuna => {
         var th = document.createElement('th');
@@ -52,6 +50,10 @@ function CriarTabela() {
         th.className = tituloColuna.classe;
         tabelaHead.appendChild(th);
     });
+
+    if (tipoUtilizador == 1) {
+        dados.sort(comparaHistorico);
+    }
 
     dados.forEach(item => {
         if (tipoUtilizador == 2 && item.historico) {
@@ -71,6 +73,7 @@ function CriarTabela() {
 
         if (tipoUtilizador == 1 && !item.historico) {
             botoes += '<a title="Editar Pedido" class="pointer" onClick="editarPedido(' + item.id + ');"><span class="material-icons">create</span></a>';
+            botoes += '<a title="Cancelar Pedido" class="pointer" onClick="cancelarPedido(' + item.id + ');"><span class="material-icons">highlight_off</span></a>';
         }
         if (tipoUtilizador == 2 && !item.historico) {
             botoes += '<a title="Fazer Proposta" class="pointer" onClick="fazerProposta(' + item.id + ');"><span class="material-icons">send</span></a>';
@@ -82,4 +85,27 @@ function CriarTabela() {
         c4.innerHTML = item.valor;
         c5.innerHTML = botoes;
     });
+}
+
+function verPedido(p1) {
+    alert("Método não desenvolvido.");
+}
+
+function editarPedido(p1) {
+    alert("Método não desenvolvido.");
+}
+
+function cancelarPedido(p1) {
+    alert("Método não desenvolvido.");
+}
+
+function fazerProposta(p1) {
+    alert("Método não desenvolvido.");
+}
+
+window.OnPageLoad = function () { }
+window.onload = function () {
+    AlteraTitulo()
+    CarregaDados();
+    CriarTabela();
 }
