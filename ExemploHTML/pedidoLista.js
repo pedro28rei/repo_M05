@@ -73,7 +73,7 @@ function CriarTabela() {
 
         if (tipoUtilizador == 1 && !item.historico) {
             botoes += '<a title="Editar Pedido" class="pointer" onClick="editarPedido(' + item.id + ');"><span class="material-icons">create</span></a>';
-            botoes += '<a title="Cancelar Pedido" class="pointer" onClick="cancelarPedido(' + item.id + ');"><span class="material-icons">highlight_off</span></a>';
+            botoes += '<a title="Cancelar Pedido" class="pointer" onClick="cancelarPedidoModal(' + item.id + ');"><span class="material-icons">highlight_off</span></a>';
         }
         if (tipoUtilizador == 2 && !item.historico) {
             botoes += '<a title="Fazer Proposta" class="pointer" onClick="fazerProposta(' + item.id + ');"><span class="material-icons">send</span></a>';
@@ -95,8 +95,25 @@ function editarPedido(p1) {
     alert("Método não desenvolvido.");
 }
 
-function cancelarPedido(p1) {
-    alert("Método não desenvolvido.");
+function cancelarPedidoModal(p1) {
+    $('#hidCodigo').val(p1);
+    $('#modalCancelar').modal('show');
+}
+
+function cancelarPedido() {
+    var codigo = $('#hidCodigo').val();
+    $('#modalCancelar').modal('hide');
+
+    // Exemplo para 2 casos, num programa real verificava se o pedido já tem algum trabalho associado para
+    // poder ou não cancelar o pedido
+    var bool = Math.random() < 0.7;
+    if (!bool) {
+        $('#toastErro').toast('show');
+        return;
+    }
+
+    // Cancelar pedido na base de dados
+    $('#toastSucesso').toast('show');
 }
 
 function fazerProposta(p1) {
