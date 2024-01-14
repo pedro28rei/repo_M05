@@ -1,3 +1,8 @@
+/*Projeto Prático da UC de AMS
+Diogo Fernandes nº26008
+Gonçalo Costa   nº26024
+Pedro Rei       nº26013
+LESI-IPCA */
 const params = new URLSearchParams(window.location.search);
 const tipoUtilizador = params.get('usr');
 

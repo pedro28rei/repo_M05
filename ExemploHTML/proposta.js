@@ -1,3 +1,8 @@
+/*Projeto Prático da UC de AMS
+Diogo Fernandes nº26008
+Gonçalo Costa   nº26024
+Pedro Rei       nº26013
+LESI-IPCA */
 window.OnPageLoad = function () {}
 window.onload = function () {
 	$("#suc").addClass('d-none');
@@ -76,7 +81,7 @@ function CriarClick() {
 		return;
 	}
 	
-	//Fun��o para Guardar Proposta
+	//Fun��o para Guardar Proposta
 
 	$("#suc").removeClass('d-none');
 	sleep(2000).then(() => { window.location.href = "index.html"; });
