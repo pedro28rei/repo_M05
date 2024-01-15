@@ -1,20 +1,25 @@
-  <!-- Projeto Prático da UC de AMS
-       Diogo Fernandes nº26008
-       Gonçalo Costa   nº26024
-       Pedro Rei       nº26013
-       LESI-IPCA 
+<!-- Projeto Prático da UC de AMS
+     Diogo Fernandes nº26008
+     Gonçalo Costa   nº26024
+     Pedro Rei       nº26013
+     LESI-IPCA 
 -->
-<!DOCTYPE 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Página Inicial</title>
 
+    <!-- Metadados da Página -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Estilos externos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Estilos CSS Internos -->
     <style>
 
+        /* Estilos para o cabeçalho */
         header {
             background-color: #282c34;
             color: white;
@@ -24,24 +29,29 @@
             padding: 0 20px;
         }
 
+        /* Estilos para o texto de navegação no cabeçalho */
         .nav-text {
             font-size: 24px;
             font-weight: bold;
         }
 
+        /* Estilos para os botões de bloco */
         .btn-block {
             border-radius: 25px;
         }
     </style>
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <span class="nav-text">PDG - Reparações</span>
     </header>
 
+    <!-- Index -->
     <div class="container text-center">
         <h1 class="py-5">Serviços de Reparação</h1>
         <div class="row py-2">
+            <!-- Coluna 1 -->
             <div class="col-sm-4">
                 <h4>SP05</h4>
                 <p>SprintDesenvolvimento01</p>
@@ -49,12 +59,14 @@
                 <a href="reparacao.html" class="btn btn-info btn-block ">Verificar Reparação</a>
                 <a href="proposta.html" class="btn btn-info btn-block">Fazer Proposta</a>
             </div>
+            <!-- Coluna 2 -->
             <div class="col-sm-4">
                 <h4>SP06</h4>
                 <p>SprintDesenvolvimento02</p>
                 <a href="pedidoLista.html?usr=1" class="btn btn-info btn-block"> Historico de Pedidos </a>
-                <a href="pedidoLista.html?usr=2" class="btn btn-info btn-block">Pedidos Disponiveis</a>
+                <a href="pedidoLista.html?usr=2" class="btn btn-info btn-block">Pedidos Disponíveis</a>
             </div>
+            <!-- Coluna 3 -->
             <div class="col-sm-4">
                 <h4>SP07</h4>
                 <p>SprintDesenvolvimento03</p>
